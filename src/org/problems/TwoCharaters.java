@@ -1,4 +1,4 @@
-package org.preparation;
+package org.problems;
 
 import java.util.ArrayList;
 import java.util.HashSet;
