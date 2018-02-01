@@ -30,7 +30,6 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] arr = {1,6,4,5,7,3};
-        //int[] list = {1,4,3};
         sort(arr, 0, arr.length-1);
         for (int i=0; i<arr.length; ++i) {
             System.out.print(arr[i] + " ");
