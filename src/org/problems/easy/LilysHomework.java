@@ -1,10 +1,11 @@
-package org.problems;
+package org.problems.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+//https://www.hackerrank.com/challenges/lilys-homework/problem
 public class LilysHomework {
 
     static int partition(int[] arr, int start, int end) {

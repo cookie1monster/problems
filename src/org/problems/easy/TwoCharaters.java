@@ -1,4 +1,4 @@
-package org.problems;
+package org.problems.easy;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+//https://www.hackerrank.com/challenges/two-characters/problem
 public class TwoCharaters {
 
     static boolean isCorrect(String s) {

@@ -1,9 +1,10 @@
-package org.problems;
+package org.problems.easy;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+//https://www.hackerrank.com/challenges/bear-and-steady-gene/problem
 public class SteadyGene {
 
     static Map<String, Integer> initMap() {

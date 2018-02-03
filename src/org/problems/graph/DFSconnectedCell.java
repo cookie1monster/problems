@@ -1,4 +1,4 @@
-package org.problems;
+package org.problems.graph;
 
 import java.util.Scanner;
 

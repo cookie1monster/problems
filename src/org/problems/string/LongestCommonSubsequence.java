@@ -1,8 +1,8 @@
-package org.problems;
+package org.problems.string;
 
 import java.util.Scanner;
 
-public class CommonChild {
+public class LongestCommonSubsequence {
 
     static int longestCommonSubsequence(char[] s1, char[] s2, int iS1, int iS2) {
         int L[][] = new int[iS1+1][iS2+1];

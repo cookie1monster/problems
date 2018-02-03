@@ -1,7 +1,8 @@
-package org.problems;
+package org.problems.easy;
 
 import java.util.Scanner;
 
+//https://www.hackerrank.com/challenges/richie-rich/problem
 public class Palindrome {
 
     static void increasePolindrome(char[] arr, boolean[] isChangedArr, int k) {

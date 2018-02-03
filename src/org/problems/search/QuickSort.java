@@ -1,4 +1,4 @@
-package org.problems;
+package org.problems.search;
 
 public class QuickSort {
 
