@@ -1,4 +1,4 @@
-package org.problems.string;
+package org.problems.dp;
 
 import java.util.Map;
 import java.util.Scanner;
