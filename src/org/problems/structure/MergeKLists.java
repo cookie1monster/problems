@@ -1,4 +1,4 @@
-package org.problems.array;
+package org.problems.structure;
 
 import java.util.Comparator;
 import java.util.SortedMap;

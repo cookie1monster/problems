@@ -1,4 +1,4 @@
-package org.problems.array;
+package org.problems.structure;
 
 public class FindMedianSortedArrays {
 
