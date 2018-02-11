@@ -6,9 +6,9 @@ public class MarsExploration {
 
     public static final String MSG = "SOS";
 
-    static int marsExploration(String s) {
+    public static int marsExploration(String s) {
         int different = 0;
-        for(int i=0;i<s.length();++i) {
+        for (int i = 0; i < s.length(); ++i) {
             if (s.charAt(i) != MSG.charAt(i % 3)) {
                 ++different;
             }

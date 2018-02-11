@@ -7,7 +7,7 @@ import java.util.Scanner;
 //https://www.hackerrank.com/challenges/bear-and-steady-gene/problem
 public class SteadyGene {
 
-    static Map<String, Integer> initMap() {
+    public static Map<String, Integer> initMap() {
         Map<String, Integer> map = new HashMap<>();
         map.put("A", 0);
         map.put("T", 0);
@@ -16,7 +16,7 @@ public class SteadyGene {
         return map;
     }
 
-    static boolean isSteady(Map<String, Integer> map, int amount) {
+    public static boolean isSteady(Map<String, Integer> map, int amount) {
         for (String g : map.keySet()) {
             if (map.get(g) > amount) {
                 return false;
@@ -25,11 +25,11 @@ public class SteadyGene {
         return true;
     }
 
-    static int steadyGene(String gene) {
+    public static int steadyGene(String gene) {
         int amount = gene.length() / 4;
         Map<String, Integer> geneMap = initMap();
-        for (int i=0; i<gene.length(); ++i) {
-            geneMap.computeIfPresent(String.valueOf(gene.charAt(i)), (k,v) -> ++v);
+        for (int i = 0; i < gene.length(); ++i) {
+            geneMap.computeIfPresent(String.valueOf(gene.charAt(i)), (k, v) -> ++v);
         }
         if (isSteady(geneMap, amount)) {
             return 0;
@@ -37,15 +37,15 @@ public class SteadyGene {
         int start = 0;
         int end = 0;
         int result = gene.length();
-        while(true) {
+        while (true) {
             if (isSteady(geneMap, amount)) {
                 if (end - start < result) {
                     result = end - start;
                 }
-                geneMap.computeIfPresent(String.valueOf(gene.charAt(start)), (k,v) -> ++v);
+                geneMap.computeIfPresent(String.valueOf(gene.charAt(start)), (k, v) -> ++v);
                 start++;
             } else if (end < gene.length()) {
-                geneMap.computeIfPresent(String.valueOf(gene.charAt(end)), (k,v) -> --v);
+                geneMap.computeIfPresent(String.valueOf(gene.charAt(end)), (k, v) -> --v);
                 end++;
             } else {
                 break;

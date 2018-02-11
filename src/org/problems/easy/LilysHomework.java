@@ -8,10 +8,10 @@ import java.util.Scanner;
 //https://www.hackerrank.com/challenges/lilys-homework/problem
 public class LilysHomework {
 
-    static int partition(int[] arr, int start, int end) {
+    public static int partition(int[] arr, int start, int end) {
         int pivot = arr[end];
         int i = start;
-        for (int j=start; j<end; j++) {
+        for (int j = start; j < end; j++) {
             if (arr[j] <= pivot) {
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -25,31 +25,31 @@ public class LilysHomework {
         return i;
     }
 
-    static void sort(int arr[], int start, int end) {
+    public static void sort(int arr[], int start, int end) {
         if (start < end) {
             int partition = partition(arr, start, end);
-            sort(arr, start, partition-1);
-            sort(arr, partition+1, end);
+            sort(arr, start, partition - 1);
+            sort(arr, partition + 1, end);
         }
     }
 
-    static int[] reverse(int[] arr) {
-        for (int i = 0; i < arr.length/2; i++) {
+    public static int[] reverse(int[] arr) {
+        for (int i = 0; i < arr.length / 2; i++) {
             int temp = arr[i];
-            arr[i] = arr[arr.length-1-i];
-            arr[arr.length-1-i] = temp;
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
         }
         return arr;
     }
 
-    static int findCost(int[] arr, int[] sortedArr, int costAprx) {
+    public static int findCost(int[] arr, int[] sortedArr, int costAprx) {
         Map<Integer, Integer> initialMap = new HashMap<>();
-        for(int i=0; i<arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             initialMap.put(arr[i], i);
         }
-        
+
         int cost = 0;
-        for(int i=0; i<sortedArr.length; ++i) {
+        for (int i = 0; i < sortedArr.length; ++i) {
             if (arr[i] != sortedArr[i]) {
                 int tempIndex = initialMap.get(sortedArr[i]);
                 initialMap.put(arr[i], tempIndex);
@@ -63,7 +63,7 @@ public class LilysHomework {
         return cost;
     }
 
-    static int lilysHomework(int[] arr) {
+    public static int lilysHomework(int[] arr) {
         int[] reverseArr = reverse(Arrays.copyOf(arr, arr.length));
         int[] sortedArr = Arrays.copyOf(arr, arr.length);
         //sort(sortedArr, 0, sortedArr.length-1);
@@ -77,7 +77,7 @@ public class LilysHomework {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int[] arr = new int[n];
-        for(int arr_i = 0; arr_i < n; arr_i++){
+        for (int arr_i = 0; arr_i < n; arr_i++) {
             arr[arr_i] = in.nextInt();
         }
         int result = lilysHomework(arr);

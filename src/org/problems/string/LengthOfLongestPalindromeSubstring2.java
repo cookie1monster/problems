@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LengthOfLongestPalindromeSubstring2 {
 
-    static int expand(String s, int left, int right) {
+    public static int expand(String s, int left, int right) {
         while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
             left--;
             right++;
@@ -12,7 +12,7 @@ public class LengthOfLongestPalindromeSubstring2 {
         return right - left - 1;
     }
 
-    static String longestPalindrome(String s, int left, int right) {
+    public static String longestPalindrome(String s, int left, int right) {
         int start = 0, end = 0;
         for (int i = left; i < right; i++) {
             int len1 = expand(s, i, i);
@@ -29,7 +29,7 @@ public class LengthOfLongestPalindromeSubstring2 {
         return s.substring(start, end + 1);
     }
 
-    static String longestPalindrome(String s) {
+    public static String longestPalindrome(String s) {
         String str1 = longestPalindrome(s, Math.min(s.length(), s.length() / 2 - 1), s.length());
         if (str1.equals(s)) {
             return str1;

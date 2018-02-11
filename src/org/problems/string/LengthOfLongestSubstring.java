@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class LengthOfLongestSubstring {
 
-    static int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         int result = 0;
         int i = 0;
         int j = 0;

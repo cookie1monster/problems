@@ -7,20 +7,16 @@ import java.util.TreeMap;
 class ListNode {
     int val;
     ListNode next;
-    ListNode(int x) { val = x; }
+
+    ListNode(int x) {
+        val = x;
+    }
 }
 
 //https://leetcode.com/problems/merge-k-sorted-lists/description/
 public class MergeKLists {
 
-    static class ListNodeComparator implements Comparator<ListNode> {
-        @Override
-        public int compare(ListNode node1, ListNode node2) {
-            return (node1 == null || node2 == null) ? -1 : Integer.compare(node1.val, node2.val);
-        }
-    }
-
-    static public void add(SortedMap<ListNode, ListNode> set, ListNode val) {
+    public static void add(SortedMap<ListNode, ListNode> set, ListNode val) {
         ListNode node;
         ListNode temp;
         if (val != null) {
@@ -36,12 +32,12 @@ public class MergeKLists {
         }
     }
 
-    static public ListNode mergeKLists(ListNode[] lists) {
+    public static ListNode mergeKLists(ListNode[] lists) {
         if (lists.length == 0) {
             return null;
         }
         SortedMap<ListNode, ListNode> set = new TreeMap<>(new ListNodeComparator());
-        for(int i=0; i<lists.length; ++i) {
+        for (int i = 0; i < lists.length; ++i) {
             add(set, lists[i]);
         }
         if (set.size() == 0) {
@@ -71,8 +67,15 @@ public class MergeKLists {
         ListNode l3 = new ListNode(1);
         ListNode l4 = new ListNode(1);
         l3.next = l4;
-        mergeKLists(new ListNode[]{l4});
+        mergeKLists(new ListNode[] { l4 });
         //mergeKLists(new ListNode[]{l1,l3});
+    }
+
+    static class ListNodeComparator implements Comparator<ListNode> {
+        @Override
+        public int compare(ListNode node1, ListNode node2) {
+            return (node1 == null || node2 == null) ? -1 : Integer.compare(node1.val, node2.val);
+        }
     }
 
 }

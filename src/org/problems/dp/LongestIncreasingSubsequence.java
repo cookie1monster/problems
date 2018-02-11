@@ -2,7 +2,7 @@ package org.problems.dp;
 
 public class LongestIncreasingSubsequence {
 
-    static int lengthOfLIS(int[] nums) {
+    public static int lengthOfLIS(int[] nums) {
         if (nums.length == 0) {
             return 0;
         }
@@ -24,6 +24,6 @@ public class LongestIncreasingSubsequence {
     }
 
     public static void main(String[] args) {
-        System.out.println(lengthOfLIS(new int[]{5,2,3,1,0,8}));
+        System.out.println(lengthOfLIS(new int[] { 5, 2, 3, 1, 0, 8 }));
     }
 }

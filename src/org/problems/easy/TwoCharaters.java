@@ -9,18 +9,18 @@ import java.util.Set;
 //https://www.hackerrank.com/challenges/two-characters/problem
 public class TwoCharaters {
 
-    static boolean isCorrect(String s) {
-        for(int i=0; i<s.length()-1;++i) {
-            if (s.charAt(i) == s.charAt(i+1)) {
+    public static boolean isCorrect(String s) {
+        for (int i = 0; i < s.length() - 1; ++i) {
+            if (s.charAt(i) == s.charAt(i + 1)) {
                 return false;
             }
         }
         return true;
     }
 
-    static String removeStrings(String s, String s1, String s2) {
+    public static String removeStrings(String s, String s1, String s2) {
         StringBuilder newString = new StringBuilder();
-        for (int i=0; i<s.length(); ++i) {
+        for (int i = 0; i < s.length(); ++i) {
             if (s.charAt(i) == s1.charAt(0) || s.charAt(i) == s2.charAt(0)) {
                 newString = newString.append(s.charAt(i));
             }
@@ -28,9 +28,9 @@ public class TwoCharaters {
         return newString.toString();
     }
 
-    static int twoCharaters(String s) {
+    public static int twoCharaters(String s) {
         Set<String> alphabetSet = new HashSet<>();
-        for (int i=0; i<s.length(); ++i) {
+        for (int i = 0; i < s.length(); ++i) {
             alphabetSet.add(s.substring(i, i + 1));
         }
         List<String> alphabet = new ArrayList<>(alphabetSet);
@@ -44,8 +44,8 @@ public class TwoCharaters {
             }
             return 0;
         }
-        for (int i=0; i<alphabet.size();++i) {
-            for (int j=i+1; j<alphabet.size();++j) {
+        for (int i = 0; i < alphabet.size(); ++i) {
+            for (int j = i + 1; j < alphabet.size(); ++j) {
                 String newString = removeStrings(s, alphabet.get(i), alphabet.get(j));
                 if (isCorrect(newString) && result < newString.length()) {
                     result = newString.length();

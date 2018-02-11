@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class NumSquares {
 
-    static int numSquares(int n) {
+    public static int numSquares(int n) {
         int[] dp = new int[n + 1];
         Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
