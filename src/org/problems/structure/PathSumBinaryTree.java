@@ -9,7 +9,7 @@ public class PathSumBinaryTree {
         TreeNode(int x) { val = x; }
     }
 
-    static public int pathSubSum(TreeNode node, int sum) {
+    public static int pathSubSum(TreeNode node, int sum) {
         if (node == null)
             return 0;
         return (sum == node.val ? 1 : 0)
@@ -17,7 +17,7 @@ public class PathSumBinaryTree {
                 + pathSum(node.right, sum - node.val);
     }
 
-    static public int pathSum(TreeNode root, int sum) {
+    public static int pathSum(TreeNode root, int sum) {
         if (root == null)
             return 0;
         return pathSubSum(root, sum)
