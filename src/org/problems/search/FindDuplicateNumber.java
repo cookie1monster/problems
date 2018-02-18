@@ -1,5 +1,6 @@
 package org.problems.search;
 
+//https://leetcode.com/problems/find-the-duplicate-number/description/
 public class FindDuplicateNumber {
 
     public static boolean binarySearch(int[] nums, int val, int lo, int hi) {

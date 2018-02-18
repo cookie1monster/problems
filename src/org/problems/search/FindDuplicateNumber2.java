@@ -1,5 +1,6 @@
 package org.problems.search;
 
+//https://leetcode.com/problems/find-the-duplicate-number/description/
 public class FindDuplicateNumber2 {
 
     public static int findDuplicate(int[] nums) {
