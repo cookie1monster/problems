@@ -1,5 +1,6 @@
 package org.problems.dp;
 
+//https://leetcode.com/problems/longest-increasing-subsequence/description/
 public class LongestIncreasingSubsequence {
 
     public static int lengthOfLIS(int[] nums) {
