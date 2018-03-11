@@ -1,4 +1,4 @@
-package org.problems.graph;
+package org.problems.dp;
 
 //https://leetcode.com/problems/maximal-rectangle/description/
 public class MaximalRectangle {
