@@ -34,12 +34,8 @@ public class MedianFinderMain2 {
 }
 
 class MedianFinder2 {
-    private Comparator comp = new Comparator<Integer>() {
-        @Override
-        public int compare(Integer v1, Integer v2) {
-            return v1 - v2;
-        }
-    };
+
+    private Comparator<Integer> comp = ((Integer o1, Integer o2) -> o1 - o2);
 
     private PriorityQueue<Integer> lo;
     private PriorityQueue<Integer> hi;
