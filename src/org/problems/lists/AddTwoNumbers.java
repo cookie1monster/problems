@@ -1,5 +1,6 @@
-package org.problems.structure;
+package org.problems.lists;
 
+//https://leetcode.com/problems/add-two-numbers/description/
 public class AddTwoNumbers {
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
