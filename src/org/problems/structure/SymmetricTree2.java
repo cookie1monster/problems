@@ -3,7 +3,7 @@ package org.problems.structure;
 //https://leetcode.com/problems/symmetric-tree/description/
 public class SymmetricTree2 {
 
-    public static boolean isSymmetric(TreeNode left, TreeNode right) {
+    private static boolean isSymmetric(TreeNode left, TreeNode right) {
         if (left == null && right == null) {
             return true;
         }
