@@ -19,7 +19,7 @@ public class LinkedListCycle {
         System.out.println();
     }
 
-    class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
