@@ -1,24 +1,18 @@
 package org.problems.structure;
 
+//https://leetcode.com/problems/linked-list-cycle/description/
 public class LinkedListCycle {
 
-    public static ListNode detectCycle(ListNode head) {
+    public static boolean hasCycle(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
         while (slow != null && fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-
-            if (slow == fast) {
-                ListNode pointer = head;
-                while (pointer != slow) {
-                    pointer = pointer.next;
-                    slow = slow.next;
-                }
-                return pointer;
-            }
+            if (slow == fast)
+                return true;
         }
-        return null;
+        return false;
     }
 
     public static void main(String[] args) {
