@@ -2,12 +2,6 @@ package org.problems.structure;
 
 //https://leetcode.com/problems/path-sum-iii/description/
 public class PathSumBinaryTree {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
     public static int pathSubSum(TreeNode node, int sum) {
         if (node == null)

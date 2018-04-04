@@ -31,14 +31,4 @@ public class InvertBinaryTree {
         invertTree(l1);
         System.out.println();
     }
-
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

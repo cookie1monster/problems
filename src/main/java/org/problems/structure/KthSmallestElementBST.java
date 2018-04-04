@@ -1,15 +1,5 @@
 package org.problems.structure;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
-
 //https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
 public class KthSmallestElementBST {
 
