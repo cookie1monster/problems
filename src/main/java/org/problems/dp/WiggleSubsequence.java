@@ -33,11 +33,10 @@ public class WiggleSubsequence {
     }
 
     public static void main(String[] args) {
-        System.out.println(wiggleMaxLength(new int[]{84}));
-        System.out.println(wiggleMaxLength(new int[]{1, 7, 4, 9, 2, 5}));
-        System.out.println(wiggleMaxLength(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}));
-        System.out.println(wiggleMaxLength(new int[]{102, 101, 20, 91, 156, 78, 75, 142, 69, 81, 46, 142, 113, 163, 190, 178, 13, 36, 134, 54}));
-        System.out.println(wiggleMaxLength(new int[]{1, 17, 5, 10, 13, 15, 10, 5, 16, 8}));
-
+        System.out.println(wiggleMaxLength(new int[]{84}) == 1);
+        System.out.println(wiggleMaxLength(new int[]{1, 7, 4, 9, 2, 5}) == 6);
+        System.out.println(wiggleMaxLength(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}) == 2);
+        System.out.println(wiggleMaxLength(new int[]{102, 101, 20, 91, 156, 78, 75, 142, 69, 81, 46, 142, 113, 163, 190, 178, 13, 36, 134, 54}) == 14);
+        System.out.println(wiggleMaxLength(new int[]{1, 17, 5, 10, 13, 15, 10, 5, 16, 8}) == 7);
     }
 }
