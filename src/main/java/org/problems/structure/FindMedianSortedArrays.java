@@ -1,5 +1,6 @@
 package org.problems.structure;
 
+//https://leetcode.com/problems/median-of-two-sorted-arrays/description/
 public class FindMedianSortedArrays {
 
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
