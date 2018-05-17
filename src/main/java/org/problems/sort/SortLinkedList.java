@@ -1,5 +1,7 @@
 package org.problems.sort;
 
+import org.problems.structure.ListNode;
+
 //https://leetcode.com/problems/sort-list/description/
 public class SortLinkedList {
 
@@ -54,11 +56,3 @@ public class SortLinkedList {
     }
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}

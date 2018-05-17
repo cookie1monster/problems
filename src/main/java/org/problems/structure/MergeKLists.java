@@ -4,14 +4,6 @@ import java.util.Comparator;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
 
 //https://leetcode.com/problems/merge-k-sorted-lists/description/
 public class MergeKLists {
