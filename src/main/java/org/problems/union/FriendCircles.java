@@ -1,4 +1,4 @@
-package org.problems.graph;
+package org.problems.union;
 
 import java.util.HashSet;
 import java.util.Set;
