@@ -1,5 +1,7 @@
 package org.problems.dp;
 
+import java.util.TreeSet;
+
 //https://leetcode.com/problems/largest-sum-of-averages/description/
 public class LargestSumAverages {
 
@@ -23,6 +25,9 @@ public class LargestSumAverages {
     }
 
     public static void main(String[] args) {
+
+        TreeSet t= new TreeSet();
+
         System.out.println(largestSumOfAverages(new int[]{9}, 1));
         System.out.println(largestSumOfAverages(new int[]{9, 1, 2, 3, 9}, 3));
         System.out.println(largestSumOfAverages(new int[]{9, 9, 1, 2, 3}, 3));
