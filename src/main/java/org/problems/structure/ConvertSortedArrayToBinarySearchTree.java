@@ -3,19 +3,14 @@ package org.problems.structure;
 //https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
 public class ConvertSortedArrayToBinarySearchTree {
 
-    public static TreeNode buildBST(int[] nums, int start, int end) {
-        if (end - start == 0)
-            return new TreeNode(nums[end]);
-        if (end - start == 1) {
-            TreeNode node = new TreeNode(nums[end]);
-            node.left = new TreeNode(nums[start]);
-            return node;
-        }
+    public static TreeNode buildBST(int[] nums, int lo, int hi) {
+        if (lo > hi)
+            return null;
 
-        int val = nums[(start + end) / 2];
-        TreeNode node = new TreeNode(val);
-        node.left = buildBST(nums, start, (start + end) / 2 - 1);
-        node.right = buildBST(nums, (start + end) / 2 + 1, end);
+        int mid = (lo + hi) / 2;
+        TreeNode node = new TreeNode(nums[mid]);
+        node.left = buildBST(nums, lo, mid - 1);
+        node.right = buildBST(nums, mid + 1, hi);
         return node;
     }
 
