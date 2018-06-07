@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 //https://leetcode.com/problems/course-schedule-ii/description/
+//Topological Sorting
 public class CourseSchedule2 {
 
     private static boolean dfs(List<Integer>[] g, int vertex, boolean[] visited, Deque<Integer> stack, boolean[] onStack) {
@@ -55,8 +56,8 @@ public class CourseSchedule2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(findOrder(2, new int[][]{{1, 0}, {0, 1}})));
         System.out.println(Arrays.toString(findOrder(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}})));
+        System.out.println(Arrays.toString(findOrder(2, new int[][]{{1, 0}, {0, 1}})));
         System.out.println(Arrays.toString(findOrder(2, new int[][]{{0, 1}})));
         System.out.println(Arrays.toString(findOrder(2, new int[][]{{1, 0}})));
     }
