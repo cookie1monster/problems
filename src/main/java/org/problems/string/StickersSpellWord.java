@@ -54,6 +54,7 @@ public class StickersSpellWord {
             return minRes;
 
         boolean stop = true;
+        // 0 - add same sticker one more time, 1 - add next
         int next = 1;
         for (int i = 0; i < 26; ++i) {
             if (dict.get(index)[i] > 0 && current[i] + dict.get(index)[i] <= targetArr[i])
@@ -95,7 +96,7 @@ public class StickersSpellWord {
 
     public static void main(String[] args) {
         System.out.println(minStickers(new String[]{"among", "right", "picture", "bell", "an", "distant", "left", "carry", "speed", "continent", "few", "snow", "port", "machine", "paint", "much", "finger", "pretty", "build", "poor", "then", "begin", "evening", "branch", "syllable", "tool", "burn", "molecule", "step", "letter", "trade", "world", "consonant", "now", "with", "grow", "protect", "substance", "science", "sand", "green", "either", "each", "very", "position", "quotient", "root", "agree", "wind", "usual"},
-                "basicforce"));
+                "basicforce") == 3);
         System.out.println(minStickers(new String[]{"safe", "tire", "gather", "street", "enter", "believe"}, "eventfat") == 4);
         System.out.println(minStickers(new String[]{"with", "example", "science", "withabc", "theha"}, "thehat") == 2);
         System.out.println(minStickers(new String[]{"with", "example", "science", "withabc"}, "thehat") == 3);
