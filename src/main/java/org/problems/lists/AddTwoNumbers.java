@@ -29,14 +29,4 @@ public class AddTwoNumbers {
     public static void main(String[] args) {
         System.out.println();
     }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 }
