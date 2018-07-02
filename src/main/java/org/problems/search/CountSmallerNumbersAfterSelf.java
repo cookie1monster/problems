@@ -7,7 +7,7 @@ import java.util.List;
 //https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
 public class CountSmallerNumbersAfterSelf {
 
-    public static int binarySearch(List<Integer> arr, int val, int lo, int hi) {
+    private static int binarySearch(List<Integer> arr, int val, int lo, int hi) {
         if (lo > hi)
             return -1;
         int mid = (lo + hi) / 2;
