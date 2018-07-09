@@ -4,23 +4,20 @@ package org.problems.dp;
 public class BestTimeBuySellStock2 {
 
     public static int maxProfit(int[] prices) {
+        if (prices.length < 2)
+            return 0;
+
         int profit = 0;
-        if (prices.length == 0)
-            return profit;
-        int min = prices[0];
-        for (int i = 1; i < prices.length - 1; ++i) {
-            if (prices[i] > prices[i + 1] && prices[i] > min) {
-                profit += prices[i] - min;
-                min = prices[i + 1];
-            } else
-                min = Math.min(min, prices[i]);
+        for (int i = 1; i < prices.length; ++i) {
+            if (prices[i - 1] < prices[i])
+                profit += prices[i] - prices[i - 1];
         }
-        return profit + ((prices[prices.length - 1] > min) ? prices[prices.length - 1] - min : 0);
+        return profit;
     }
 
     public static void main(String[] args) {
-        System.out.println(maxProfit(new int[]{7, 6, 4, 3, 1}));
-        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
-        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 9}));
+        System.out.println(maxProfit(new int[]{7, 6, 4, 3, 1}) == 0);
+        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}) == 7);
+        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 9}) == 10);
     }
 }
