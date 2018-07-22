@@ -39,7 +39,7 @@ public class RangeSumQuery {
     }
 
     public static void main(String[] args) {
-        NumArray na = new NumArray(new int[]{7, 2, 7, 2, 0});
+        NumArray na = new NumArray(new int[]{7, 3, 6, 4, 0, 9, 1});
         na.update(4, 6);
         na.update(0, 2);
         na.update(0, 9);

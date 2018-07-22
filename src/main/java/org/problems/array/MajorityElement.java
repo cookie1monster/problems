@@ -1,4 +1,4 @@
-package org.problems.bits;
+package org.problems.array;
 
 //If we had some way of counting instances of the majority element as +1 and instances of any other element as -1,
 // summing them would make it obvious that the majority element is indeed the majority element.
