@@ -16,8 +16,8 @@ public class BestTimeBuySellStock2 {
     }
 
     public static void main(String[] args) {
+        System.out.println(maxProfit(new int[]{7, 1, 2, 3, 6, 4}));
         System.out.println(maxProfit(new int[]{7, 6, 4, 3, 1}) == 0);
-        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}) == 7);
         System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 9}) == 10);
     }
 }

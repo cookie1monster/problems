@@ -1,4 +1,4 @@
-package org.problems.dp;
+package org.problems.minimax;
 
 //https://leetcode.com/problems/predict-the-winner/description/
 public class CanIWin {

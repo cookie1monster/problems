@@ -26,6 +26,7 @@ public class BestTimeBuySellStock4 {
             for (int i = 1; i < prices.length; ++i) {
                 min = Math.min(min, prices[i] - dp[k - 1][i - 1]);
                 dp[k][i] = Math.max(dp[k][i - 1], prices[i] - min);
+                //dp[k, i] = max(dp[k, i-1], prices[i] - prices[j] + dp[k-1, j-1]), j=[0..i-1]
             }
         }
         return dp[K][dp[0].length - 1];
