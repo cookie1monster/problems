@@ -35,7 +35,7 @@ public class MedianFinderMain2 {
 
 class MedianFinder2 {
 
-    private Comparator<Integer> comp = ((Integer o1, Integer o2) -> o1 - o2);
+    private Comparator<Integer> comp = (Integer::compare);
 
     private PriorityQueue<Integer> lo;
     private PriorityQueue<Integer> hi;
@@ -46,11 +46,14 @@ class MedianFinder2 {
     }
 
     public void addNum(int num) {
-        if (lo.size() == 0 || num < lo.peek()) {
+        if (lo.size() == 0 || num < lo.peek())
             lo.add(num);
-        } else {
+        else if (hi.size() == 0 || num > hi.peek())
             hi.add(num);
-        }
+        else if (lo.size() < hi.size())
+            lo.add(num);
+        else
+            hi.add(num);
 
         if (Math.abs(lo.size() - hi.size()) > 1) {
             if (lo.size() <= hi.size()) {
