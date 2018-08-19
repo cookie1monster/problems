@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 //https://leetcode.com/problems/binary-tree-postorder-traversal/description/
 public class BinaryTreePostorderTraversal {
 
-    private static List<Integer> postorderTraversal(TreeNode root) {
+    private static List<Integer> postorderTraversal1(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root == null)
             return list;
@@ -44,6 +45,28 @@ public class BinaryTreePostorderTraversal {
             }
         }
         return list;
+    }
+
+    private static List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.empty()) {
+            TreeNode node = stack.pop();
+            res.add(node.val);
+
+            if (node.left != null)
+                stack.push(node.left);
+
+            if (node.right != null)
+                stack.push(node.right);
+        }
+        for (int i = 0; i < res.size() / 2; ++i) {
+            int tmp = res.get(i);
+            res.set(i, res.get(res.size() - i - 1));
+            res.set(res.size() - i - 1, tmp);
+        }
+        return res;
     }
 
     public static void main(String[] args) {
