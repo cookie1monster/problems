@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 //https://leetcode.com/problems/falling-squares/description/
+//Segment tree
 public class FallingSquares2 {
 
     static class Node {

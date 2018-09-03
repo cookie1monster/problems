@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 //https://leetcode.com/problems/the-skyline-problem/description/
+//Segment tree
 public class TheSkylineProblem2 {
 
     static class Node {

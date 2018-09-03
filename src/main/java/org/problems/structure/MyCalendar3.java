@@ -5,6 +5,27 @@ import java.util.TreeMap;
 //https://leetcode.com/problems/my-calendar-iii/description/
 public class MyCalendar3 {
 
+    static class MyCalendarThree {
+
+        private TreeMap<Integer, Integer> tree;
+        private int maxOverlap = 0;
+
+        public MyCalendarThree() {
+            tree = new TreeMap<>();
+        }
+
+        public int book(int start, int end) {
+            tree.put(start, tree.getOrDefault(start, 0) + 1);
+            tree.put(end, tree.getOrDefault(end, 0) - 1);
+            int curOverlap = 0;
+            for (int val : tree.headMap(end).values()) {
+                curOverlap += val;
+                maxOverlap = Math.max(maxOverlap, curOverlap);
+            }
+            return maxOverlap;
+        }
+    }
+
     public static void main(String[] args) {
         MyCalendarThree calendarThree = new MyCalendarThree();
 
@@ -26,23 +47,3 @@ public class MyCalendar3 {
     }
 }
 
-class MyCalendarThree {
-
-    private TreeMap<Integer, Integer> tree;
-    private int maxOverlap = 0;
-
-    public MyCalendarThree() {
-        tree = new TreeMap<>();
-    }
-
-    public int book(int start, int end) {
-        tree.put(start, tree.getOrDefault(start, 0) + 1);
-        tree.put(end, tree.getOrDefault(end, 0) - 1);
-        int curOverlap = 0;
-        for (int val : tree.headMap(end).values()) {
-            curOverlap += val;
-            maxOverlap = Math.max(maxOverlap, curOverlap);
-        }
-        return maxOverlap;
-    }
-}
