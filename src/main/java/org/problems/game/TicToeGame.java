@@ -43,12 +43,10 @@ class TicToeGame {
 
     private void print() {
         for (int r = 0; r < N; ++r) {
-            System.out.print("|");
             for (int c = 0; c < N; ++c) {
-                System.out.print(board[r][c] == Character.MIN_VALUE ? " " : board[r][c]);
-                System.out.print("|");
+                System.out.print("|" + (board[r][c] == Character.MIN_VALUE ? " " : board[r][c]));
             }
-            System.out.println();
+            System.out.println("|");
             for (int i = 0; i <= 2 * N; ++i)
                 System.out.print("-");
             System.out.println();
