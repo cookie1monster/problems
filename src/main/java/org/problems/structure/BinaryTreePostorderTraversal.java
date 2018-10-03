@@ -1,51 +1,11 @@
 package org.problems.structure;
 
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
 //https://leetcode.com/problems/binary-tree-postorder-traversal/description/
 public class BinaryTreePostorderTraversal {
-
-    private static List<Integer> postorderTraversal1(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        if (root == null)
-            return list;
-
-        Deque<TreeNode> leftQ = new LinkedList<>();
-        Deque<TreeNode> rightQ = new LinkedList<>();
-        leftQ.addFirst(root);
-        TreeNode lastPoll = root;
-        boolean isRight = false;
-        while (!leftQ.isEmpty()) {
-            TreeNode node = leftQ.peekFirst();
-            if (!rightQ.isEmpty() && (rightQ.peekFirst().left == lastPoll || rightQ.peekFirst().right == lastPoll)) {
-                isRight = true;
-                node = rightQ.peekFirst();
-            }
-            while (node != null) {
-                if (((isRight || node.left == null) && (node.right == null)) || lastPoll == node.right || (lastPoll == node.left && node.right == null)) {
-                    list.add(node.val);
-                    lastPoll = node;
-                    if (node == leftQ.peekFirst())
-                        leftQ.pollFirst();
-                    else
-                        rightQ.pollFirst();
-                    node = null;
-                } else if (isRight || node.left == null || lastPoll == node.left) {
-                    rightQ.addFirst(node.right);
-                    node = node.right;
-                } else {
-                    leftQ.addFirst(node.left);
-                    node = node.left;
-                }
-                isRight = false;
-            }
-        }
-        return list;
-    }
 
     private static List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();

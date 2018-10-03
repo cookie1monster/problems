@@ -8,6 +8,28 @@ import java.util.Stack;
 public class BinaryTreePreorderTraversalNonRecursive {
 
     public static List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        if (root == null)
+            return ans;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.empty()) {
+            TreeNode node = stack.pop();
+            ans.add(node.val);
+
+            if (node.right != null)
+                stack.push(node.right);
+
+            if (node.left != null)
+                stack.push(node.left);
+        }
+
+        return ans;
+    }
+
+
+    public static List<Integer> preorderTraversal1(TreeNode root) {
         List<Integer> res = new ArrayList();
         Stack<TreeNode> stack = new Stack();
 

@@ -1,5 +1,7 @@
 package org.problems.structure;
 
+import java.util.Stack;
+
 //https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
 public class FlattenBinaryTreeToLinkedList {
 
@@ -22,19 +24,41 @@ public class FlattenBinaryTreeToLinkedList {
         }
     }
 
-    public static void flatten(TreeNode root) {
+    public static void flatten1(TreeNode root) {
         if (root == null)
             return;
         flattenPass(root);
     }
 
+    public static void flatten(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        TreeNode prev = root;
+
+        while (node != null) {
+            while (node != null) {
+                if (node.right != null)
+                    stack.push(node.right);
+                node.right = node.left;
+                node.left = null;
+                prev = node;
+                node = node.right;
+            }
+            if (stack.empty())
+                prev.right = null;
+            else
+                prev.right = stack.pop();
+            node = prev.right;
+        }
+    }
+
     public static void main(String[] args) {
 
-        TreeNode ll1 = new TreeNode(1);
-        TreeNode ll2 = new TreeNode(2);
-        ll1.left = ll2;
-        flatten(ll1);
-        System.out.println();
+//        TreeNode ll1 = new TreeNode(1);
+//        TreeNode ll2 = new TreeNode(2);
+//        ll1.left = ll2;
+//        flatten(ll1);
+//        System.out.println();
 
 
         TreeNode l1 = new TreeNode(1);

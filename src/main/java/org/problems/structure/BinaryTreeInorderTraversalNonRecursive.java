@@ -5,33 +5,6 @@ import java.util.*;
 //https://leetcode.com/problems/binary-tree-inorder-traversal/description/
 public class BinaryTreeInorderTraversalNonRecursive {
 
-    public static List<Integer> inorderTraversal2(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        if (root == null) {
-            return result;
-        }
-        Deque<TreeNode> stack = new LinkedList<>();
-        Set<TreeNode> set = new HashSet<>();
-        set.add(null);
-        stack.addFirst(root);
-        while (stack.size() > 0) {
-            TreeNode node = stack.getFirst();
-            if (set.contains(node.left) && set.contains(node.right)) {
-                node = stack.pollFirst();
-                set.add(node);
-                result.add(node.val);
-            } else if (node.left != null && !set.contains(node.left)) {
-                stack.addFirst(node.left);
-            } else if (node.right != null && !set.contains(node.right)) {
-                node = stack.pollFirst();
-                set.add(node);
-                result.add(node.val);
-                stack.addFirst(node.right);
-            }
-        }
-        return result;
-    }
-
     public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         Deque<TreeNode> stack = new LinkedList<>();
