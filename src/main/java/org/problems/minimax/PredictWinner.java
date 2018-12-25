@@ -3,16 +3,26 @@ package org.problems.minimax;
 //https://leetcode.com/problems/predict-the-winner/description/
 public class PredictWinner {
 
-    private static int predictTheWinner(int[] nums, int lo, int hi, int turn) {
-        if (lo == hi)
-            return turn * nums[lo];
-        int x = turn * nums[lo] + predictTheWinner(nums, lo + 1, hi, -turn);
-        int y = turn * nums[hi] + predictTheWinner(nums, lo, hi - 1, -turn);
-        return turn * Math.max(turn * x, turn * y);
+    public static boolean predictTheWinner(int[] nums) {
+        Integer[][] dp = new Integer[nums.length][nums.length];
+        return winner(nums, 0, nums.length - 1, 1, dp) >= 0;
     }
 
-    public static boolean predictTheWinner(int[] nums) {
-        return predictTheWinner(nums, 0, nums.length - 1, 1) >= 0;
+    public static int winner(int[] nums, int s, int e, int turn, Integer[][] dp) {
+        if (s == e)
+            return turn * nums[s];
+
+        if (dp[s][e] != null)
+            return dp[s][e];
+
+        int a = turn * nums[s] + winner(nums, s + 1, e, -turn, dp);
+        int b = turn * nums[e] + winner(nums, s, e - 1, -turn, dp);
+        if (turn == -1)
+            dp[s][e] = Math.min(a, b);
+        else
+            dp[s][e] = Math.max(a, b);
+
+        return dp[s][e];
     }
 
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package org.problems.structure;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 //https://leetcode.com/problems/split-array-into-consecutive-subsequences/description/
 public class SplitArrayintoConsecutiveSubsequences {
@@ -19,12 +19,20 @@ public class SplitArrayintoConsecutiveSubsequences {
     public static boolean isPossible(int[] nums) {
         if (nums.length < 3)
             return false;
-        Set<Sequence> sequences = new HashSet<>();
+        LinkedList<Sequence> sequences = new LinkedList<>();
         for (int num : nums) {
             Sequence toAdd = null;
-            for (Sequence sequence : sequences) {
+            Iterator<Sequence> it = sequences.descendingIterator();
+            while (it.hasNext()) {
+                Sequence sequence = it.next();
                 if (sequence.val + 1 == num && (toAdd == null || sequence.amount < 3)) {
                     toAdd = sequence;
+                    break;
+                }
+                if (sequence.val + 1 < num) {
+                    if (sequence.amount < 3)
+                        return false;
+                    it.remove();
                 }
             }
             if (toAdd == null) {

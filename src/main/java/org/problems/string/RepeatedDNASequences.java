@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 //https://leetcode.com/problems/repeated-dna-sequences/description/
+//Rabin-Karp
 public class RepeatedDNASequences {
 
     public static List<String> findRepeatedDnaSequences(String s) {
