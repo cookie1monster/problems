@@ -32,7 +32,7 @@ public class DijkstraShortestPath2 {
         Map<Integer, Point> points = new HashMap<>();
 
         Map<Integer, Map<Integer, Integer>> g = new HashMap<>(n + 1);
-        for (int i = 1; i <= n; ++i) {
+        for (int i = 1; i <= n + 1; ++i) {
             g.put(i, new HashMap<>(n));
             points.put(i, new Point(i, null, Integer.MAX_VALUE));
         }
@@ -64,7 +64,6 @@ public class DijkstraShortestPath2 {
                     adjPoint.parent = point;
                     pq.offer(adjPoint);
                 }
-
             }
         }
 
@@ -78,7 +77,6 @@ public class DijkstraShortestPath2 {
         }
         return result;
     }
-
 
         /*
     1
